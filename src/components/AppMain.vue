@@ -1,24 +1,20 @@
 <script>
-import { store } from '../data/store.js'
+import ProjectsList from './projects/ProjectsList.vue';
 export default {
     name: 'AppMain',
-    data: () => ({
-        store
-    })
+    components: { ProjectsList }
 };
 </script>
 
 <template>
     <main>
-        <div class="container">
-            <h3 v-for="project in store.projects">{{ project.title }}
-            </h3>
-        </div>
+        <ProjectsList></ProjectsList>
     </main>
 </template>
 
 <style lang="scss" scoped>
 main {
     background-color: rgb(40, 40, 40);
+    min-height: 90vh;
 }
 </style>
